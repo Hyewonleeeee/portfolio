@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0e0e0e;
+  --foreground: #ededed;
+  --accent-teal: #00d8b3;
+  --accent-yellow: #ffdca8;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent-teal: var(--accent-teal);
+  --color-accent-yellow: var(--accent-yellow);
+  --font-sans: var(--font-inter);
+}
+
+/* Custom color utilities for Tailwind */
+.bg-accent-teal {
+  background-color: var(--accent-teal);
+}
+
+.text-accent-teal {
+  color: var(--accent-teal);
+}
+
+.border-accent-teal {
+  border-color: var(--accent-teal);
+}
+
+.hover\:text-accent-teal:hover {
+  color: var(--accent-teal);
+}
+
+.hover\:border-accent-teal:hover {
+  border-color: var(--accent-teal);
+}
+
+.bg-accent-yellow {
+  background-color: var(--accent-yellow);
+}
+
+.hover\:bg-accent-yellow:hover {
+  background-color: var(--accent-yellow);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Grain texture effect */
+.grain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  z-index: 1000;
+}
+
+/* Wave animation */
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0) scaleY(1);
+  }
+  50% {
+    transform: translateY(-10px) scaleY(1.05);
+  }
+}
+
+.wave-animation {
+  animation: wave 3s ease-in-out infinite;
+}
