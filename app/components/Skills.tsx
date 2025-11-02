@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const skillCategories = [
   {
     title: "Audio Tools",
-    skills: ["DAW", "JUCE", "Max"],
+    skills: ["Ableton", "Logic", "Cubase", "JUCE", "Max"],
   },
   {
     title: "Development",
